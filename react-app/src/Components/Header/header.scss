@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~Scss/index.scss";
+
+@use "sass:map";
+
+#header {
+    // color:;
+    background-color: map-get($theme-colors, "success") !important;
+}
+
+
+#header-brand {
+    color: $text-color;
+}
+
+
+@import "node_modules/bootstrap/scss/bootstrap";

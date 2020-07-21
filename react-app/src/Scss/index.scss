@@ -1,0 +1,16 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+$theme-colors: (
+  "primary": #F27C38,
+  "success": #3BD97F,
+  "danger": #F2D027,
+  "info":#54BF8D
+);
+
+$text-color : #1E1E26;
+
+
+@import "~bootstrap/scss/bootstrap";
+

@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useRef } from 'react';
 import './App.css';
+import 'Scss/index.scss'
+import { IUser, IGroup } from "Common/type";
+import { UserTable } from 'Components/UserTable/UserTable'
+import { Header } from "Components/Header/Header";
 
-function App() {
+type InputRef = React.RefObject<HTMLInputElement> | null | undefined
+
+const initialUsers: IUser[] = [
+  
+  {id: "567890", name: "Popo", group: {id: "234567", name: "Group 1"}, createdAt: "2020/01/12"}
+]
+
+const  App: React.FC = () => {
+  const [users, setUsers] = useState<IUser[]>(initialUsers)
+  const inputRef = useRef<InputRef>()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title="React TypeScript Practice" />
+      
+      <UserTable users={users}/>
     </div>
   );
 }
