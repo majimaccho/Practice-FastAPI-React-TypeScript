@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "567890", 
+      "name": "Popo", 
+      "group": {
+        "id": "234567", "name": "Group 1"
+      }, 
+      "createdAt": "2020/01/12"
+    },
+    {
+      "id": "567452", 
+      "name": "Agata", 
+      "group": {
+        "id": "234567", "name": "Group 1"
+      }, 
+      "createdAt": "2020/01/13"
+    },
+    {
+      "id": "562258", 
+      "name": "Holey", 
+      "group": {
+        "id": "176547", "name": "Group 2"
+      }, 
+      "createdAt": "2020/01/18"
+    }
+
+  ]      
+}

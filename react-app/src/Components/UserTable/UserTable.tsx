@@ -1,13 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Container from 'react-bootstrap/Container'
 import Table from 'react-bootstrap/Table'
 import './userTable.scss'
-import { IUser } from 'Common/type'
-interface IProps {
-    users: IUser[]
-}
 
-export const UserTable:React.FC<IProps> =  ({users}) => {
+import { UserListContext } from "GlobalState/UserList/UserListContext";
+
+export const UserTable:React.FC =  () => {
+  const { state } = useContext(UserListContext)
+  const { users } = state
   return (
     <Container fluid>
       <Table className='mt-2' striped bordered hover>
@@ -27,7 +27,7 @@ export const UserTable:React.FC<IProps> =  ({users}) => {
               <td>{user.name}</td>
               <td>{user.group.name}</td>
               <td>{user.createdAt}</td>
-            </tr>              
+            </tr>
             )
           })}
         </tbody>
