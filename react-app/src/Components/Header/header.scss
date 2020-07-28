@@ -5,6 +5,8 @@
 
 @use "sass:map";
 
+$header-text-color : #FCFCFC;
+
 #header {
     // color:;
     background-color: map-get($theme-colors, "success") !important;
@@ -12,7 +14,7 @@
 
 
 #header-brand {
-    color: $text-color;
+    color: $header-text-color;
 }
 
 

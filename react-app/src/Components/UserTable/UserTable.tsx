@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Table from 'react-bootstrap/Table'
 import './userTable.scss'
 
-import { UserListContext } from "GlobalState/UserList/UserListContext";
+import UserListContext from "GlobalState/UserList/UserListContext";
 
 export const UserTable:React.FC =  () => {
   const { state } = useContext(UserListContext)

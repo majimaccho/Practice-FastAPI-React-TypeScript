@@ -11,12 +11,6 @@ export const initialState: IUserListContextState = {
     users: []
 };
 
-export type State = typeof initialState;
-
-export type Action =
-  | { type: 'SET_USERS', newUsers: IUser[] }
-  | { type: 'SORT', asc: boolean, orderBy: string}
-
 export type IUserListContextValue  = {
 	state: IUserListContextState, // state
 	dispatch: React.Dispatch<Action>  // dispatch
@@ -24,7 +18,14 @@ export type IUserListContextValue  = {
 
 export const initialValue: IUserListContextValue = {state: initialState, dispatch: () => null}
 
-export const UserListContext: React.Context<typeof initialValue> = createContext(initialValue)
+const UserListContext: React.Context<typeof initialValue> = createContext(initialValue)
+
+export type State = typeof initialState;
+
+export type Action =
+  | { type: 'SET_USERS', newUsers: IUser[] }
+  | { type: 'SORT', asc: boolean, orderBy: string}
+
 
 export const userReducer = (state: State, action: Action):State => {
     switch (action.type){
@@ -51,3 +52,5 @@ export const UserListProvider: React.FC<UserListProviderPorps> = ({ children }) 
 		</UserListContext.Provider>
 	)
 }
+
+export default UserListContext

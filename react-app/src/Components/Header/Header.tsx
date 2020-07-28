@@ -10,7 +10,7 @@ export const Header:React.FC<IProps> =  ({title}) => {
     <>
       <Navbar  id='header' bg="light">
         <Navbar.Brand id='header-brand' href="#home"><b>{title}</b></Navbar.Brand>
-      </Navbar>    
+      </Navbar>
     </>
     )
 }
