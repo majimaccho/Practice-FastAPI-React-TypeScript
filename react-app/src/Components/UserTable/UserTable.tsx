@@ -42,7 +42,8 @@ export const UserTable:React.FC =  () => {
   const { state } = useContext(UserListContext)
   const { users } = state
   const classes = useStyles()
-
+  console.log({users});
+  
   return (
     <div className={classes.root}>
       <TableContainer component={Paper}>
@@ -52,17 +53,17 @@ export const UserTable:React.FC =  () => {
               <StyledTableCell>User ID</StyledTableCell>
               <StyledTableCell>User Name</StyledTableCell>
               <StyledTableCell>User Group</StyledTableCell>
-              <StyledTableCell>Created at</StyledTableCell>
+              <StyledTableCell>Group Rank</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {users.map(user => {
               return (
                 <StyledTableRow>
-                <StyledTableCell>{user.id}</StyledTableCell>
-                <StyledTableCell>{user.name}</StyledTableCell>
-                <StyledTableCell>{user.group.name}</StyledTableCell>
-                <StyledTableCell>{user.createdAt}</StyledTableCell>
+                <StyledTableCell>{user.user_id}</StyledTableCell>
+                <StyledTableCell>{user.user_name}</StyledTableCell>
+                <StyledTableCell>{user.group_name}</StyledTableCell>
+                <StyledTableCell>{user.group_rank}</StyledTableCell>
               </StyledTableRow>
               )
             })}

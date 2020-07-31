@@ -1,10 +1,10 @@
 import React, { createContext, useReducer, Reducer } from 'react'
 // import { reducer,initialState, initialValue, Action, State } from './UserListReducer'
 
-import { IUser } from 'Common/type'
+import { IUserInfo } from 'Common/type'
 
 export interface IUserListContextState {
-	users: IUser[]
+	users: IUserInfo[]
 }
 
 export const initialState: IUserListContextState = {
@@ -23,7 +23,7 @@ const UserListContext: React.Context<typeof initialValue> = createContext(initia
 export type State = typeof initialState;
 
 export type Action =
-  | { type: 'SET_USERS', newUsers: IUser[] }
+  | { type: 'SET_USERS', newUsers: IUserInfo[] }
   | { type: 'SORT', asc: boolean, orderBy: string}
 
 

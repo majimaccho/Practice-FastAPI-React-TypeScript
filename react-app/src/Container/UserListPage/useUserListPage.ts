@@ -8,7 +8,7 @@ export default ():void => {
   useEffect(() => {
     getUserList()
     .then(({data}) => {
-      dispatch({ type: 'SET_USERS', newUsers: data.users })
+      dispatch({ type: 'SET_USERS', newUsers: data })
     })
     .catch(console.error)
   }, [])

@@ -1,2 +1,4 @@
-export const mockApiUrl = './Tests/Data'
-export const mockUserListUrl = mockApiUrl + '/SampleUser.json'
+const isTest = process.env.NODE_ENV === 'test'
+
+export const mockApiUrl = isTest ? './Tests/Data' : 'http://localhost:8000'
+export const userListUrl = mockApiUrl + (isTest ? '/SampleUser.json' : "/users/")

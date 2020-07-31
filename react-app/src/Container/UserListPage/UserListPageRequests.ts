@@ -1,14 +1,12 @@
 import { AxiosPromise } from 'axios';
 
-import { mockUserListUrl } from "Common/url"
-import { IUser } from "Common/type"
+import { userListUrl } from "Common/url"
+import { IUserInfo } from "Common/type"
 import api from 'Common/api'
 
-interface userListResponce {
-    users: IUser[]
-}
+type UserListResponce = IUserInfo[]
 
-export const getUserList = (): AxiosPromise<userListResponce>  => {
-    return api.get(mockUserListUrl)
+export const getUserList = (): AxiosPromise<UserListResponce>  => {
+    return api.get(userListUrl)
 }
 
